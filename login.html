@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Admin - Hotel Melati 1</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      /* Background Gradient Mewah: Kombinasi Gelap & Emas Elegan */
+      background: radial-gradient(circle at top left, #2c2416 0%, #111111 50%, #080808 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Ornamen Cahaya Mewah di Latar Belakang */
+    body::before {
+      content: '';
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      background: rgba(212, 168, 79, 0.15);
+      filter: blur(120px);
+      border-radius: 50%;
+      top: 10%;
+      right: 15%;
+      z-index: 1;
+    }
+
+    .login-card {
+      position: relative;
+      z-index: 2;
+      /* Kartu bergaya Glassmorphism Kaca Transparan */
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 40px 35px;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 
+                  0 0 20px rgba(212, 168, 79, 0.2);
+      border: 1px solid rgba(212, 168, 79, 0.3);
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+    }
+
+    .login-logo {
+      width: 95px;
+      height: auto;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    }
+
+    h2 { 
+      margin-bottom: 25px; 
+      color: #111; 
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .form-group { 
+      margin-bottom: 20px; 
+      text-align: left; 
+    }
+
+    label { 
+      display: block; 
+      margin-bottom: 8px; 
+      font-weight: 600; 
+      color: #333;
+      font-size: 14px;
+    }
+
+    input { 
+      width: 100%; 
+      padding: 13px 15px; 
+      border: 1.5px solid #e0e0e0; 
+      border-radius: 10px; 
+      box-sizing: border-box; 
+      font-family: inherit;
+      transition: all 0.3s ease;
+      background: #fafafa;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #d4a84f;
+      background: #fff;
+      box-shadow: 0 0 8px rgba(212, 168, 79, 0.3);
+    }
+
+    button { 
+      width: 100%; 
+      padding: 14px; 
+      background: linear-gradient(135deg, #d4a84f 0%, #b88f3e 100%); 
+      color: white; 
+      border: none; 
+      border-radius: 10px; 
+      font-weight: 700; 
+      font-size: 15px;
+      cursor: pointer; 
+      margin-top: 10px; 
+      box-shadow: 0 8px 20px rgba(212, 168, 79, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    button:hover { 
+      background: linear-gradient(135deg, #b88f3e 0%, #9e7830 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(212, 168, 79, 0.4);
+    }
+
+    .error-msg { 
+      color: #e74c3c; 
+      text-align: center; 
+      font-size: 14px; 
+      margin-top: 12px; 
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-card">
+    <!-- LOGO HOTEL MELATI 1 -->
+    <img src="images/logo melati verti trans final.png" alt="Hotel Melati 1 Logo" class="login-logo">
+    
+    <h2>Login Admin</h2>
+    <form id="formLogin">
+      <div class="form-group">
+        <label>Email Admin:</label>
+        <input type="email" id="email" placeholder="admin@hotelmelati1.com" required>
+      </div>
+      <div class="form-group">
+        <label>Password:</label>
+        <input type="password" id="password" placeholder="••••••••" required>
+      </div>
+      <button type="submit" id="btnLogin">Masuk Dashboard</button>
+      <div id="errorMsg" class="error-msg"></div>
+    </form>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDPwFNUER0ntjrhdWWFJktpwMhlcpay6uk",
+      authDomain: "hotel-melati-1.firebaseapp.com",
+      projectId: "hotel-melati-1",
+      storageBucket: "hotel-melati-1.firebasestorage.app",
+      messagingSenderId: "709830442483",
+      appId: "1:709830442483:web:9c2e6aea67e60260cba686"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    document.getElementById('formLogin').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const btn = document.getElementById('btnLogin');
+      const errorMsg = document.getElementById('errorMsg');
+
+      btn.disabled = true;
+      btn.innerText = "Memeriksa Kredensial...";
+      errorMsg.innerText = "";
+
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        window.location.href = "admin.html";
+      } catch (error) {
+        errorMsg.innerText = "Email atau Password salah!";
+        btn.disabled = false;
+        btn.innerText = "Masuk Dashboard";
+      }
+    });
+  </script>
+</body>
+</html>

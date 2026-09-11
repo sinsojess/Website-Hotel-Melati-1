@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Melati 1</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <a href="#home">
+      <img src="images/meli 2.png" alt="Hotel Melati 1">
+    </a>
+  </div>
+
+  <div class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <nav class="nav-menu">
+    <a href="#home">Beranda</a>
+    <a href="#about">Tentang Kami</a>
+    <a href="#gallery">Galeri</a>
+    <a href="#rooms">Kamar</a>
+    <a href="#contact">Kontak</a>
+    <a href="brandbook.html">Brandbook</a>
+  </nav>
+
+  <!-- SWITCHER BAHASA & BUTTON HUBUNGI KAMI -->
+  <div class="nav-actions">
+    <div class="lang-switcher">
+      <button class="lang-btn active" id="btn-id" onclick="changeLanguage('id')">🇮🇩 ID</button>
+      <button class="lang-btn" id="btn-en" onclick="changeLanguage('en')">🇬🇧 EN</button>
+    </div>
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <a class="nav-book" id="navBookBtn"
+       href="https://wa.me/6283115557912?text=Halo%20Hotel%20Melati%201%2C%20saya%20ingin%20booking%20kamar."
+       target="_blank">
+      Hubungi Kami
+    </a>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <p class="subtitle">SELAMAT DATANG DI BEDUGUL</p>
+    <h1>Rasakan Sejuknya Alam Bali</h1>
+    <p class="description">
+      Hotel Melati 1 menawarkan pengalaman menginap nyaman,
+      sejuk, dan strategis di kawasan wisata Bedugul Bali.
+    </p>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-container">
+    
+    <div class="about-text">
+      <p class="section-subtitle">TENTANG KAMI</p>
+      <h2>Visi & Misi Hotel Melati 1</h2>
+      
+      <div class="vision-box">
+        <h3>Visi:</h3>
+        <div id="visionText">
+          <p>Menjadi penyedia akomodasi hotel terjangkau di kawasan Kebun Raya Bedugul.</p>
+        </div>
+      </div>
+
+      <div class="mission-box">
+        <h3>Misi:</h3>
+        <ul id="missionList">
+          <li>Memberikan harga yang kompetitif.</li>
+          <li>Menjamin kebersihan dan kenyamanan.</li>
+          <li>Menyediakan fasilitas utama yang berkualitas.</li>
+          <li>Memberikan pelayanan ramah dan cepat.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="about-video">
+      <iframe 
+        id="aboutVideoIframe"
+        width="100%" 
+        height="350" 
+        src="https://www.youtube.com/embed/YOnr9WpcJV8" 
+        title="Video Profil Hotel Melati 1" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+  </div>
+</section>
+
+<!-- SEKSI GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="title-center">
+    <p class="section-subtitle">GALERI</p>
+    <h2>Suasana Hotel</h2>
+  </div>
+  <div class="gallery-grid" id="galleryContainer"></div>
+</section>
+
+<!-- SEKSI KAMAR -->
+<section class="rooms" id="rooms">
+  <div class="title-center">
+    <p class="section-subtitle">KAMAR & FASILITAS</p>
+    <h2>Kamar & Fasilitas Kami</h2>
+  </div>
+  <div class="room-grid" id="roomsContainer"></div>
+</section>
+
+<!-- SEKSI KONTAK -->
+<section class="contact" id="contact">
+  <div class="contact-overlay"></div>
+  <div class="contact-container">
+    <div class="contact-text">
+      <p class="section-subtitle">KONTAK</p>
+      <h2>Kontak & Reservasi</h2>
+      <p>📍 Jalan Kebun Raya Bedugul, Candikuning, Tabanan, Bali</p>
+      <p id="phoneContact">📞 0831-1555-7912</p>
+      <p id="hoursContact">⏰ 07.00 - 23.00 WITA</p>
+      <a id="waContactBtn" href="https://wa.me/6283115557912?text=Halo%20Hotel%20Melati%201%2C%20saya%20ingin%20booking%20kamar." class="whatsapp-btn" target="_blank">
+        HUBUNGI KAMI
+      </a>
+      <a href="https://www.google.com/maps?q=Hotel+Melati+1+Bedugul" class="maps-btn" target="_blank">
+        MENUJU LOKASI
+      </a>
+    </div>
+
+    <div class="map-card">
+      <iframe
+        src="https://www.google.com/maps?q=Hotel+Melati+1+Bedugul&output=embed"
+        width="100%"
+        height="350"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <div class="map-image">
+      <img id="contactAtmosphereImg" src="images/IMG_3120-HDR.jpg" alt="Location Atmosphere">
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h3>HOTEL MELATI 1</h3>
+  <p>&copy; 2026 Hotel Melati 1. All Rights Reserved.</p>
+</footer>
+
+<!-- GOOGLE TRANSLATE API ENGINE -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'id',
+      includedLanguages: 'id,en',
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+
+  function changeLanguage(langCode) {
+    document.cookie = "googtrans=/id/" + langCode + "; path=/;";
+    document.cookie = "googtrans=/id/" + langCode + "; domain=" + window.location.hostname + "; path=/;";
+    location.reload();
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const cookies = document.cookie.split(';');
+    let currentLang = 'id';
+    cookies.forEach(c => {
+      if (c.trim().startsWith('googtrans=')) {
+        currentLang = c.trim().split('/').pop();
+      }
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    const activeBtn = document.getElementById('btn-' + currentLang);
+    if (activeBtn) activeBtn.classList.add('active');
+  });
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- INTEGRASI FIREBASE FIRESTORE -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getFirestore, collection, getDocs, doc, getDoc, query, orderBy } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDPwFNUER0ntjrhdWWFJktpwMhlcpay6uk",
+    authDomain: "hotel-melati-1.firebaseapp.com",
+    projectId: "hotel-melati-1",
+    storageBucket: "hotel-melati-1.firebasestorage.app",
+    messagingSenderId: "709830442483",
+    appId: "1:709830442483:web:9c2e6aea67e60260cba686"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+window.loadSettingsData = async function() {
+    try {
+      // 1. Ambil data About Us
+      const aboutRef = doc(db, "about_us", "info");
+      const aboutSnap = await getDoc(aboutRef);
+
+      if (aboutSnap.exists()) {
+        const aData = aboutSnap.data();
+        const visionEl = document.getElementById('visionText');
+        if (visionEl) {
+          if (aData.visiList && Array.isArray(aData.visiList) && aData.visiList.length > 0) {
+            visionEl.innerHTML = aData.visiList.map(v => `<p style="margin-bottom: 6px;">${v}</p>`).join('');
+          } else if (aData.visi) {
+            visionEl.innerHTML = `<p>${aData.visi}</p>`;
+          }
+        }
+        const missionEl = document.getElementById('missionList');
+        if (missionEl) {
+          if (aData.misiList && Array.isArray(aData.misiList) && aData.misiList.length > 0) {
+            missionEl.innerHTML = aData.misiList.map(m => `<li>${m}</li>`).join('');
+          }
+        }
+        if (aData.videoUrl) {
+          const videoIframe = document.getElementById('aboutVideoIframe');
+          if (videoIframe) videoIframe.src = aData.videoUrl;
+        }
+      }
+
+      // 2. Ambil data Contact
+      const contactRef = doc(db, "contact", "info");
+      const contactSnap = await getDoc(contactRef);
+
+      if (contactSnap.exists()) {
+        const cData = contactSnap.data();
+        let formattedPhone = cData.phone || "0831-1555-7912";
+        let waNumber = formattedPhone.replace(/\D/g, '');
+        if (waNumber.startsWith('0')) waNumber = '62' + waNumber.substring(1);
+
+        const phoneEl = document.getElementById('phoneContact');
+        if (phoneEl) phoneEl.innerText = `📞 ${formattedPhone}`;
+
+        const hoursEl = document.getElementById('hoursContact');
+        if (hoursEl && cData.hours) hoursEl.innerText = `⏰ ${cData.hours}`;
+
+        const waLink = `https://wa.me/${waNumber}?text=Halo%20Hotel%20Melati%201%2C%20saya%20ingin%20booking%20kamar.`;
+        const navBookBtn = document.getElementById('navBookBtn');
+        const waContactBtn = document.getElementById('waContactBtn');
+        if (navBookBtn) navBookBtn.href = waLink;
+        if (waContactBtn) waContactBtn.href = waLink;
+
+        if (cData.contactImageUrl) {
+          const contactImgEl = document.getElementById('contactAtmosphereImg');
+          if (contactImgEl) contactImgEl.src = cData.contactImageUrl;
+        }
+        window.currentWaNumber = waNumber;
+      }
+    } catch (err) {
+      console.error("Gagal memuat pengaturan:", err);
+    }
+  };
+
+  window.loadGalleryData = async function() {
+    const galleryContainer = document.getElementById('galleryContainer');
+    if (!galleryContainer) return;
+
+    try {
+      const q = query(collection(db, "gallery"), orderBy("order", "asc"));
+      const querySnapshot = await getDocs(q);
+
+      galleryContainer.innerHTML = "";
+      querySnapshot.forEach((docSnap) => {
+        const data = docSnap.data();
+        const galleryCardHtml = `
+          <div class="gallery-card">
+            <img src="${data.imageUrl}" alt="${data.judul}">
+            <div class="gallery-overlay">
+              <h3>${data.judul}</h3>
+              <p>${data.deskripsi}</p>
+            </div>
+          </div>
+        `;
+        galleryContainer.innerHTML += galleryCardHtml;
+      });
+
+      if (typeof initGalleryTap === 'function') {
+        initGalleryTap();
+      }
+    } catch (error) {
+      console.error("Gagal memuat galeri:", error);
+    }
+  };
+
+  window.loadRoomsData = async function() {
+    const roomsContainer = document.getElementById('roomsContainer');
+    if (!roomsContainer) return;
+
+    try {
+      const q = query(collection(db, "rooms"), orderBy("order", "asc"));
+      const querySnapshot = await getDocs(q);
+
+      if (querySnapshot.empty) {
+        roomsContainer.innerHTML = `<p style="text-align:center; width:100%; grid-column: 1/-1;">Belum ada data kamar yang ditambahkan dari Admin.</p>`;
+        return;
+      }
+
+      roomsContainer.innerHTML = "";
+      const activeWa = window.currentWaNumber || "6283115557912";
+
+      querySnapshot.forEach((docSnap) => {
+        const data = docSnap.data();
+
+        let slidesHtml = "";
+        if (data.images && data.images.length > 0) {
+          data.images.forEach((imgUrl, index) => {
+            const activeClass = index === 0 ? "active" : "";
+            slidesHtml += `<img src="${imgUrl}" alt="${data.nama}" class="slide ${activeClass}">`;
+          });
+        }
+
+        const roomCardHtml = `
+          <div class="room-card">
+            <div class="room-image">
+              <div class="slider-container">
+                <div class="slider-slides">
+                  ${slidesHtml}
+                </div>
+                <button class="slider-btn prev-btn">&#10094;</button>
+                <button class="slider-btn next-btn">&#10095;</button>
+              </div>
+            </div>
+
+            <div class="room-content">
+              <h3>${data.nama}</h3>
+              <p>${data.deskripsi}</p>
+
+              <div class="facility-icons">
+                <div class="facility-item"><span class="icon">📶</span><small>Free WiFi</small></div>
+                <div class="facility-item"><span class="icon">🚿</span><small>Hot Water</small></div>
+                <div class="facility-item"><span class="icon">🍳</span><small>Breakfast</small></div>
+                <div class="facility-item"><span class="icon">📺</span><small>Television</small></div>
+              </div>
+
+              <div class="room-footer">
+                <div>
+                  <small>Start From</small>
+                  <h4>${data.harga}</h4>
+                </div>
+                <a href="https://wa.me/${activeWa}?text=Halo%20Hotel%20Melati%201%2C%20saya%20ingin%20booking%20kamar%20${encodeURIComponent(data.nama)}." target="_blank">
+                  <button>CHAT US</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+        roomsContainer.innerHTML += roomCardHtml;
+      });
+
+      if (typeof initRoomSliders === 'function') {
+        initRoomSliders();
+      }
+
+    } catch (error) {
+      console.error("Gagal memuat kamar:", error);
+    }
+  };
+
+  window.addEventListener('DOMContentLoaded', async () => {
+    await window.loadSettingsData();
+    window.loadGalleryData();
+    window.loadRoomsData();
+  });
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
