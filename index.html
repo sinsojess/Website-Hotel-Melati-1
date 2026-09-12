@@ -44,7 +44,7 @@
     <div id="google_translate_element" style="display:none;"></div>
 
     <a class="nav-book" id="navBookBtn"
-       href="https://wa.me/6283115557912?text=Halo%20Hotel%20Melati%201%2C%20saya%20ingin%20booking%20kamar."
+       href="https://wa.me/6285113120221?text=Halo%20Hotel%20Melati%201%2C%20saya%20ingin%20booking%20kamar."
        target="_blank">
       Hubungi Kami
     </a>
@@ -93,7 +93,7 @@
         id="aboutVideoIframe"
         width="100%" 
         height="350" 
-        src="https://www.youtube.com/embed/YOnr9WpcJV8" 
+        src="https://youtu.be/6rehLffUQtg" 
         title="Video Profil Hotel Melati 1" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -131,9 +131,9 @@
       <p class="section-subtitle">KONTAK</p>
       <h2>Kontak & Reservasi</h2>
       <p>📍 Jalan Kebun Raya Bedugul, Candikuning, Tabanan, Bali</p>
-      <p id="phoneContact">📞 0831-1555-7912</p>
+      <p id="phoneContact">📞 085113120221</p>
       <p id="hoursContact">⏰ 07.00 - 23.00 WITA</p>
-      <a id="waContactBtn" href="https://wa.me/6283115557912?text=Halo%20Hotel%20Melati%201%2C%20saya%20ingin%20booking%20kamar." class="whatsapp-btn" target="_blank">
+      <a id="waContactBtn" href="https://wa.me/6285113120221?text=Halo%20Hotel%20Melati%201%2C%20saya%20ingin%20booking%20kamar." class="whatsapp-btn" target="_blank">
         HUBUNGI KAMI
       </a>
       <a href="https://www.google.com/maps?q=Hotel+Melati+1+Bedugul" class="maps-btn" target="_blank">
@@ -245,7 +245,7 @@ window.loadSettingsData = async function() {
 
       if (contactSnap.exists()) {
         const cData = contactSnap.data();
-        let formattedPhone = cData.phone || "0831-1555-7912";
+        let formattedPhone = cData.phone || "085113120221";
         let waNumber = formattedPhone.replace(/\D/g, '');
         if (waNumber.startsWith('0')) waNumber = '62' + waNumber.substring(1);
 
@@ -317,7 +317,7 @@ window.loadSettingsData = async function() {
       }
 
       roomsContainer.innerHTML = "";
-      const activeWa = window.currentWaNumber || "6283115557912";
+      const activeWa = window.currentWaNumber || "6285113120221";
 
       querySnapshot.forEach((docSnap) => {
         const data = docSnap.data();

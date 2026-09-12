@@ -403,7 +403,7 @@
 
           <div class="form-group">
             <label>Nomor WhatsApp / HP (Format: 628xxxx / 08xxxx):</label>
-            <input type="text" id="setPhone" placeholder="Contoh: 0831-1555-7912" required>
+            <input type="text" id="setPhone" placeholder="Contoh: 085113120221" required>
           </div>
           <div class="form-group">
             <label>Jam Buka / Operasional:</label>
@@ -956,13 +956,13 @@
         
         if (contactSnap.exists()) {
           const cData = contactSnap.data();
-          document.getElementById('setPhone').value = cData.phone || '0831-1555-7912';
+          document.getElementById('setPhone').value = cData.phone || '085113120221';
           document.getElementById('setHours').value = cData.hours || '07.00 - 23.00 WITA';
           const contactImg = cData.contactImageUrl || 'images/IMG_3120-HDR.jpg';
           document.getElementById('existingContactImageUrl').value = contactImg;
           document.getElementById('previewContactImg').src = contactImg;
         } else {
-          document.getElementById('setPhone').value = '0831-1555-7912';
+          document.getElementById('setPhone').value = '085113120221';
           document.getElementById('setHours').value = '07.00 - 23.00 WITA';
         }
 
